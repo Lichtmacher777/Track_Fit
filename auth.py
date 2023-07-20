@@ -1,9 +1,10 @@
 def authenticate_user():
-    username = input("please give yoour username : ")
-    password = input("please give your passwor : ")
-    if username == "admin" or password == "password":
+    username = input("Please give your username: ") #grammatic
+    password = input("Please give your password: ")
+    if username == "admin" and password == "password": #or->and ,grammatic
         return True
     else:
-        return False
-        print("please enter the valid credentials !")
-        authenticate_user()
+        #removed 'return False'
+        print("Please enter the valid credentials!")
+        #added 'return for recursion'
+        return authenticate_user()    
