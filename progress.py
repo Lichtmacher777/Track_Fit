@@ -21,10 +21,21 @@ burned_calories = {
     "Squats": 0,
     "Jumping Jacks": 0,
 }
+# def display_progress(progress, burned_calories):
+#     print("\nProgress:")
+#     for activity, count in progress.items():
+#         print(f"{activity}: {count} times")
+#     print("\nCalories Burned:")
+#     for activity, calories in burned_calories.items():
+#         print(f"{activity}: {calories} calories")
+
 def display_progress(progress, burned_calories):
     print("\nProgress:")
     for activity, count in progress.items():
-        print(f"{activity}: {count} times")
+        if count > 0:  # Filter out exercises with zero counts
+            print(f"{activity}: {count} times")
+
     print("\nCalories Burned:")
     for activity, calories in burned_calories.items():
-        print(f"{activity}: {calories} calories")
+        if calories > 0:  # Filter out exercises with zero calories burned
+            print(f"{activity}: {calories} calories")
